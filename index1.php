@@ -31,14 +31,20 @@
                 <input type="text" required placeholder="user name" name="name"/>
                 <span class="show">Show</span>
             </div>  <br>
+            <div id="form">
             <div class="field">
                 <span class="fa fa-box"></span>
-                <input type="text" required placeholder="Enter E-mail" name="email" />
-            </div>  <br>
+                <input type="text" required placeholder="Enter E-mail" name="email" id = "email" onkeydown="validation()"/>
+            </div>  
+            <span id="text" style = "
+            padding: 5px;
+            border-radius: 5px;"></span>
+            </div>
+            <br>
             
             <div class="field space">
                 <span class="fa fa-lock"></span>
-                <input type="password" class="pass-key" required placeholder="Password" name="password"/>
+                <input type="password" class="pass-key" required placeholder="Password" name="password" />
                 <span class="show">Show</span>
             </div>
               
@@ -57,6 +63,49 @@
 
       
     </div>
+
+    <script>//document.getElementsByClassName
+
+function validation()
+{
+        var email = document.getElementById("email").value;
+        var form = document.getElementById("form");
+        var text = document.getElementById("text");
+        var pattern = /^[^ ]+@[^ ]+\.[a-z]+\.[a-z]$/;
+    
+
+        if(email.match(pattern)){
+            form.classList.add("valid");
+            form.classList.remove("invalid");
+            
+            text.innerHTML ="your Email is valid";
+            text.style.color = "#00ff00";
+            text.style.background = "#373737";
+            
+            
+
+
+        }
+        else{
+            form.classList.remove("valid");
+            form.classList.add("invalid");
+            text.innerHTML ="please enter valid CHARUSAT Id";
+            text.style.color = "#ff0000";
+            text.style.background = "#373737";
+
+        }
+
+        if(email == ""){
+            form.classList.remove("valid");
+            form.classList.remove("invalid");
+            text.innerHTML ="Enter Your CHARUSAT Email!";
+            text.style.color = "#00ff00";
+            text.style.background = "#373737";
+
+
+        }
+       }
+</script>
     <script
   src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"

@@ -99,6 +99,42 @@
     cursor:pointer;
     font-family: "montserrat", sans-serif;
 }
+#form .inputBox{
+    position: relative;
+}
+#text{
+    display: block;
+    border:1px solid #000;
+    color: #000;
+    font-weight: 300;
+    font-style:italic;
+    padding: 5px;
+}
+
+#form.invalid .inputBox:before{
+    content: '';
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    width: 24px;
+    height: 24px;
+    background-image: url(invalid.png);
+    background-size: cover;
+
+}
+
+#form.valid .inputBox:before{
+    content: '';
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    width: 24px;
+    height: 24px;
+    background: url(valid.png);
+    background-size: cover;
+
+}
+
  .pass-key{ /*pass-key:valid ~ .show */
     display:block;
 }
